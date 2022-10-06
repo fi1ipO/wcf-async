@@ -5,7 +5,7 @@ Following inconsistency happens at the first batch of requests after WCF client 
   
 Whenever there are some data stored in the ExecutionContext (like using AsyncLocal) it is expected that those will "flow" throughout the async/await chain. 
 However there seems to be some inconsistency of this processing in ServiceModel generated proxy client and the flowing of ExecutionContext does not happen correctly in the first request.
-DelegatingHandler is here registered using IEndpointBehavior's AddBindingParameters method:  
+DelegatingHandler is here registered using IEndpointBehavior's AddBindingParameters method.  
   
 If the content of the ExecutionContext is examined in the DelegatingHandler we can see following results:  
 First request - there are correctly passed data from the initial ExecutionContext thas is modified via AsyncLocal:  
