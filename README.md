@@ -8,7 +8,7 @@ However there seems to be some inconsistency of this processing in ServiceModel 
 DelegatingHandler is here registered using IEndpointBehavior's AddBindingParameters method.  
   
 If the content of the ExecutionContext is examined in the DelegatingHandler we can see following results:  
-First request - there are correctly passed data from the initial ExecutionContext thas is modified via AsyncLocal:  
+First request - there are correctly passed data from the initial ExecutionContext that is modified via AsyncLocal:  
 ![First request!](images/firstReq.png)
   
 Second and every other request processed simultaneously with the first one:
